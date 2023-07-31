@@ -41,12 +41,17 @@ class ArticleDetailPage extends StatelessWidget {
                   style: const TextStyle(fontSize: 10),
                 ),
                 const SizedBox(height: 10),
-                ElevatedButton(onPressed: () {
-                  Navigator.pushNamed(context, ArticleWebView.routeName,
-                      arguments: article.url);
-                }, child: const Text('Read more'))
-              ],
-            ),)
+                ElevatedButton(
+                  child: const Text('Read more'),
+                  onPressed: () {
+                    Navigator.pushNamed(
+                        context,
+                        ArticleWebView.routeName,
+                        arguments: article.url
+                    );},
+                )
+              ]),
+            )
           ],
         ),
       ),

@@ -31,10 +31,7 @@ class Article {
 }
 
 List<Article> parseArticles(String? json) {
-  if (json == null) {
-    return [];
-  }
-
+  if (json == null) return [];
   final List parsed = jsonDecode(json);
   return parsed.map((json) => Article.fromJson(json)).toList();
 }

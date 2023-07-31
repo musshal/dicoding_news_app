@@ -19,11 +19,11 @@ class NewsListPage extends StatelessWidget {
         builder: (context, snapshot) {
           final List<Article> articles = parseArticles(snapshot.data);
           return ListView.builder(
-            itemCount: articles.length,
+              itemCount: articles.length,
               itemBuilder: (context, index) {
-            return _buildArticleItem(context, articles[index]);
-          });
-        },
+                return _buildArticleItem(context, articles[index]);
+              });
+          },
       ),
     );
   }
@@ -39,8 +39,10 @@ class NewsListPage extends StatelessWidget {
       title: Text(article.title),
       subtitle: Text(article.author),
       onTap: () {
-        Navigator.pushNamed(context, ArticleDetailPage.routeName,
-          arguments: article
+        Navigator.pushNamed(
+            context,
+            ArticleDetailPage.routeName,
+            arguments: article
         );
       },
     );
