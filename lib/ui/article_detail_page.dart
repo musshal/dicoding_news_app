@@ -1,5 +1,5 @@
-import 'package:dicoding_news_app/article.dart';
-import 'package:dicoding_news_app/article_web_view.dart';
+import 'package:dicoding_news_app/data/model/article.dart';
+import 'package:dicoding_news_app/ui/article_web_view.dart';
 import 'package:flutter/material.dart';
 
 class ArticleDetailPage extends StatelessWidget {
