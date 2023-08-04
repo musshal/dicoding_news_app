@@ -3,9 +3,10 @@ import 'dart:io';
 import 'package:dicoding_news_app/ui/article_list_page.dart';
 import 'package:dicoding_news_app/ui/settings_page.dart';
 import 'package:dicoding_news_app/common/styles.dart';
-import 'package:dicoding_news_app/widgets/platform_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../widget/platform_widget.dart';
 
 class HomePage extends StatefulWidget {
   static const routeName = '/home_page';
