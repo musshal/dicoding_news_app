@@ -22,6 +22,12 @@ class ArticlesResult {
             article.publishedAt != null &&
             article.content != null)),
   );
+
+  Map<String, dynamic> toJson() => {
+    "status": status,
+    "totalResults": totalResults,
+    "articles": List<dynamic>.from(articles.map((e) => e.toJson()))
+  };
 }
 
 class Article {
@@ -52,6 +58,16 @@ class Article {
     publishedAt: DateTime.parse(json["publishedAt"]),
     content: json["content"],
   );
+
+  Map<String, dynamic> toJson() => {
+    "author": author,
+    "title": title,
+    "description": description,
+    "url": url,
+    "urlToImage": urlToImage,
+    "publishedAt": publishedAt?.toIso8601String(),
+    "content": content,
+  };
 }
 
 List<Article> parseArticles(String? json) {

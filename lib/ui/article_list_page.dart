@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../widget/card_article.dart';
-import 'news_provider.dart';
+import '../provider/news_provider.dart';
 
 class ArticleListPage extends StatelessWidget {
   const ArticleListPage({Key? key}) : super(key: key);
