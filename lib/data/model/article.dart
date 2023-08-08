@@ -12,22 +12,22 @@ class ArticlesResult {
   final List<Article> articles;
 
   factory ArticlesResult.fromJson(Map<String, dynamic> json) => ArticlesResult(
-    status: json["status"],
-    totalResults: json["totalResults"],
-    articles: List<Article>.from((json["articles"] as List)
-        .map((x) => Article.fromJson(x))
-        .where((article) =>
-            article.author != null &&
-            article.urlToImage != null &&
-            article.publishedAt != null &&
-            article.content != null)),
-  );
+        status: json["status"],
+        totalResults: json["totalResults"],
+        articles: List<Article>.from((json["articles"] as List)
+            .map((x) => Article.fromJson(x))
+            .where((article) =>
+                article.author != null &&
+                article.urlToImage != null &&
+                article.publishedAt != null &&
+                article.content != null)),
+      );
 
   Map<String, dynamic> toJson() => {
-    "status": status,
-    "totalResults": totalResults,
-    "articles": List<dynamic>.from(articles.map((e) => e.toJson()))
-  };
+        "status": status,
+        "totalResults": totalResults,
+        "articles": List<dynamic>.from(articles.map((e) => e.toJson()))
+      };
 }
 
 class Article {
@@ -50,24 +50,24 @@ class Article {
   String? content;
 
   factory Article.fromJson(Map<String, dynamic> json) => Article(
-    author: json["author"],
-    title: json["title"],
-    description: json["description"],
-    url: json["url"],
-    urlToImage: json["urlToImage"],
-    publishedAt: DateTime.parse(json["publishedAt"]),
-    content: json["content"],
-  );
+        author: json["author"],
+        title: json["title"],
+        description: json["description"],
+        url: json["url"],
+        urlToImage: json["urlToImage"],
+        publishedAt: DateTime.parse(json["publishedAt"]),
+        content: json["content"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "author": author,
-    "title": title,
-    "description": description,
-    "url": url,
-    "urlToImage": urlToImage,
-    "publishedAt": publishedAt?.toIso8601String(),
-    "content": content,
-  };
+        "author": author,
+        "title": title,
+        "description": description,
+        "url": url,
+        "urlToImage": urlToImage,
+        "publishedAt": publishedAt?.toIso8601String(),
+        "content": content,
+      };
 }
 
 List<Article> parseArticles(String? json) {

@@ -20,7 +20,7 @@ class NotificationHelper {
   Future<void> initNotifications(
       FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin) async {
     var initializationSettingsAndroid =
-    const AndroidInitializationSettings('app_icon');
+        const AndroidInitializationSettings('app_icon');
 
     var initializationSettingsIOS = const DarwinInitializationSettings(
       requestAlertPermission: false,
@@ -74,7 +74,7 @@ class NotificationHelper {
 
   void configureSelectNotificationSubject(String route) {
     selectNotificationSubject.stream.listen(
-          (String payload) async {
+      (String payload) async {
         var data = ArticlesResult.fromJson(json.decode(payload));
         var article = data.articles[0];
         Navigation.intentWithData(route, article);

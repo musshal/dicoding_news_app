@@ -11,8 +11,7 @@ class ApiService {
 
   Future<ArticlesResult> topHeadlines() async {
     final response = await http.get(Uri.parse(
-        "${_baseUrl}top-headlines?country=$_country&category=$_category&apiKey=$_apiKey"
-    ));
+        "${_baseUrl}top-headlines?country=$_country&category=$_category&apiKey=$_apiKey"));
     if (response.statusCode == 200) {
       return ArticlesResult.fromJson(json.decode(response.body));
     } else {

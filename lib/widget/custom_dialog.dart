@@ -14,27 +14,29 @@ customDialog(BuildContext context) {
             title: const Text('Coming Soon!'),
             content: const Text('This feature will be coming soon!'),
             actions: [
-              CupertinoDialogAction(child: const Text('ok'),
+              CupertinoDialogAction(
+                  child: const Text('ok'),
                   onPressed: () {
-                Navigation.back();
-                })
+                    Navigation.back();
+                  })
             ],
           );
         });
   } else {
-    showDialog(context: context, builder: (context) {
-      return AlertDialog(
-        title: const Text('Coming Soon!'),
-        content: const Text('This feature will be coming soon'),
-        actions: [
-          TextButton(
-              onPressed: () {
-                Navigation.back();
-                },
-              child: const Text('Ok')
-          )
-        ],
-      );
-    });
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: const Text('Coming Soon!'),
+            content: const Text('This feature will be coming soon'),
+            actions: [
+              TextButton(
+                  onPressed: () {
+                    Navigation.back();
+                  },
+                  child: const Text('Ok'))
+            ],
+          );
+        });
   }
 }

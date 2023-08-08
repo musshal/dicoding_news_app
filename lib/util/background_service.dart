@@ -28,7 +28,8 @@ class BackgroundService {
     final NotificationHelper notificationHelper = NotificationHelper();
 
     var result = await ApiService().topHeadlines();
-    await notificationHelper.showNotification(flutterLocalNotificationsPlugin, result);
+    await notificationHelper.showNotification(
+        flutterLocalNotificationsPlugin, result);
 
     _uiSendPort ??= IsolateNameServer.lookupPortByName(_isolateName);
     _uiSendPort?.send(null);

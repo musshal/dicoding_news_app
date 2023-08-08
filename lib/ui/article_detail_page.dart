@@ -20,9 +20,8 @@ class ArticleDetailPage extends StatelessWidget {
         child: Column(
           children: [
             Hero(
-              tag: article.urlToImage!,
-                child: Image.network(article.urlToImage!)
-            ),
+                tag: article.urlToImage!,
+                child: Image.network(article.urlToImage!)),
             Padding(
               padding: const EdgeInsets.all(10),
               child: Column(
@@ -56,11 +55,11 @@ class ArticleDetailPage extends StatelessWidget {
                     ElevatedButton(
                       child: const Text('Read more'),
                       onPressed: () {
-                        Navigation.intentWithData(ArticleWebView.routeName, article.url);
+                        Navigation.intentWithData(
+                            ArticleWebView.routeName, article.url);
                       },
                     ),
-                  ]
-              ),
+                  ]),
             )
           ],
         ),
